@@ -97,13 +97,13 @@ def main():
         pygame.display.update()
 
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] and snake.dir != 'right':
             snake.dir = 'left'
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_RIGHT] and snake.dir != 'left':
             snake.dir = 'right'
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_UP] and snake.dir != 'down':
             snake.dir = 'up'
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN] and snake.dir != 'up':
             snake.dir = 'down'
 
         snake.move()
